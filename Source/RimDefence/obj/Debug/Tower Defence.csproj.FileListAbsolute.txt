@@ -1,8 +1,0 @@
-E:\IsNotOnline\RimWorld\Mods\TowerDefence\Source\Assemblies\Tower Defence.dll
-E:\IsNotOnline\RimWorld\Mods\TowerDefence\Source\Tower Defence\Tower Defence\obj\Debug\Tower Defence.csprojAssemblyReference.cache
-E:\IsNotOnline\RimWorld\Mods\TowerDefence\Source\Tower Defence\Tower Defence\obj\Debug\Tower Defence.csproj.CoreCompileInputs.cache
-E:\IsNotOnline\RimWorld\Mods\TowerDefence\Source\Tower Defence\Tower Defence\obj\Debug\Tower Defence.dll
-E:\IsNotOnline\RimWorld\Mods\TowerDefence\Source\Tower Defence\obj\Debug\Tower Defence.csprojAssemblyReference.cache
-E:\IsNotOnline\RimWorld\Mods\TowerDefence\Source\Tower Defence\obj\Debug\Tower Defence.csproj.CoreCompileInputs.cache
-E:\IsNotOnline\RimWorld\Mods\TowerDefence\Source\Tower Defence\obj\Debug\Tower Defence.dll
-E:\IsNotOnline\RimWorld\Mods\TowerDefence\Assemblies\Tower Defence.dll

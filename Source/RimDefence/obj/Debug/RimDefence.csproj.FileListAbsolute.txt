@@ -1,5 +1,0 @@
-E:\IsNotOnline\RimWorld\Mods\RimDefence\Assemblies\RimDefence.dll
-E:\IsNotOnline\RimWorld\Mods\RimDefence\Source\Tower Defence\obj\Debug\RimDefence.csprojAssemblyReference.cache
-E:\IsNotOnline\RimWorld\Mods\RimDefence\Source\Tower Defence\obj\Debug\RimDefence.csproj.CoreCompileInputs.cache
-E:\IsNotOnline\RimWorld\Mods\RimDefence\Source\Tower Defence\obj\Debug\RimDefence.csproj.CopyComplete
-E:\IsNotOnline\RimWorld\Mods\RimDefence\Source\Tower Defence\obj\Debug\RimDefence.dll
