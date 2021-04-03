@@ -8,7 +8,7 @@ using Verse;
 
 using HarmonyLib;
 
-namespace Tower_Defence
+namespace RimDefence
 {
     [StaticConstructorOnStartup]
     public class Helper

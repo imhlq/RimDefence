@@ -1,44 +1,63 @@
-<?xml version="1.0" encode="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
     <ThingDef ParentName="BuildingBase">
         <defName>EnergyCore</defName>
         <label>能量核心</label>
         <description>利用暗物质湮灭产生巨大能量的仪器</description>
-        <thingClass>Building</thingClass>
-        <graphicData>
-            <texPath>Things/Building/Power/ChemfuelPoweredGenerator</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>(2,2)</drawSize>
-        </graphicData>
-        <altitudeLayer>Building</altitudeLayer>
+        <size>(1,1)</size>
         <passability>PassThroughOnly</passability>
-        <pathCost>50</pathCost>
-        <blockWind>true</blockWind>
-        <fillPercent>1.0</fillPercent>
+        <stealable>true</stealable>
+        <fillPercent>0.35</fillPercent>
+        <pathCost>42</pathCost>
         <rotatable>false</rotatable>
-
         <statBases>
-            <MarketValue>50000</MarketValue>
-            <MaxHitPoints>1000</MaxHitPoints>
-            <WorkToBuild>1000</WorkToBuild>
-            <Flammability>1.0</Flammability>
-            <Beauty>0</Beauty>
+            <MaxHitPoints>2000</MaxHitPoints>
+            <Flammability>0</Flammability>
+            <Mass>15</Mass>
+            <MarketValue>300000</MarketValue>
+            <WorkToBuild>300</WorkToBuild>
         </statBases>
-
-        <tickerType>Normal</tickerType>
-        <canOverlapZones>false</canOverlapZones>
-        <size>(2,2)</size>
-        <building>
-            <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
-        </building>
-
+        <graphicData>
+        <texPath>Things/Building/Mech/UnstablePowerCell</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+        <drawSize>(1,1)</drawSize>
+        <shadowData>
+            <volume>(0.6, 0.4, 0.6)</volume>
+        </shadowData>
+        <damageData>
+            <rect>(0.2, 0.2, 0.6, 0.6)</rect>
+        </damageData>
+        </graphicData>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <thingCategories>
+            <li>BuildingsSpecial</li>
+        </thingCategories>
+        <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+        <placeWorkers>
+            <li>PlaceWorker_ShowExplosionRadius</li>
+        </placeWorkers>
+        <minifiedDef>MinifiedThing</minifiedDef>
         <comps>
             <li Class="CompProperties_Power">
-                <compClass>Tower_Defence.EnergyCore</compClass>
-                <basePowerConsumption>-1</basePowerConsumption>
+                <compClass>CompPowerPlant</compClass>
+                <basePowerConsumption>-4000000</basePowerConsumption>
                 <transmitsPower>true</transmitsPower>
             </li>
+            <li Class="CompProperties_Glower">
+                <glowRadius>4</glowRadius>
+                <glowColor>(115,200,23,0)</glowColor>
+            </li>
+            <li Class="CompProperties_Explosive">
+                <wickTicks>240</wickTicks>
+                <explosiveRadius>19.9</explosiveRadius>
+                <explosiveDamageType>Bomb</explosiveDamageType>
+                <explodeOnKilled>true</explodeOnKilled>
+                <startWickHitPointsPercent>0.5</startWickHitPointsPercent>
+                <extraInspectStringKey>ExplosionOnDamageWarning</extraInspectStringKey>
+            </li>
         </comps>
-
+        <costList>
+            <ComponentIndustrial>2</ComponentIndustrial>
+        </costList>
     </ThingDef>
 </Defs>

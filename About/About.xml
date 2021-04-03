@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ModMetaData>
-  <name>Tower Defence</name>
+  <name>RimDefence</name>
   <author>xHou</author>
-  <packageId>xHou.towerdefence</packageId>
+  <packageId>xHou.rimdefence</packageId>
   <url>https://xhou.me/</url>
   <supportedVersions>
     <li>1.2</li>

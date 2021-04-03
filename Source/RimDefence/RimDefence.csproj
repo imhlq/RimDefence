@@ -7,8 +7,8 @@
     <ProjectGuid>{0BD95EA6-AAB5-4319-AF6E-822C0CA102CA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tower_Defence</RootNamespace>
-    <AssemblyName>Tower Defence</AssemblyName>
+    <RootNamespace>RimDefence</RootNamespace>
+    <AssemblyName>RimDefence</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
