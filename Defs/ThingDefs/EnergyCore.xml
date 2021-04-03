@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="BuildingBase">
+        <defName>EnergyCore</defName>
+        <label>能量核心</label>
+        <description>利用暗物质湮灭产生巨大能量的仪器</description>
+        <size>(2,2)</size>
+        <passability>PassThroughOnly</passability>
+        <stealable>true</stealable>
+        <fillPercent>0.35</fillPercent>
+        <pathCost>42</pathCost>
+        <rotatable>false</rotatable>
+        <statBases>
+            <MaxHitPoints>2000</MaxHitPoints>
+            <Flammability>0</Flammability>
+            <Mass>15</Mass>
+            <MarketValue>300000</MarketValue>
+            <WorkToBuild>300</WorkToBuild>
+        </statBases>
+        <graphicData>
+        <texPath>Buildings/AF_CDWMega</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+        <drawSize>(2,2)</drawSize>
+        <shadowData>
+            <volume>(0.6, 0.4, 0.6)</volume>
+        </shadowData>
+        <damageData>
+            <rect>(0.2, 0.2, 0.6, 0.6)</rect>
+        </damageData>
+        </graphicData>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <thingCategories>
+            <li>BuildingsSpecial</li>
+        </thingCategories>
+        <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+        <placeWorkers>
+            <li>PlaceWorker_ShowExplosionRadius</li>
+        </placeWorkers>
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerPlant</compClass>
+                <basePowerConsumption>-4000000</basePowerConsumption>
+                <transmitsPower>true</transmitsPower>
+            </li>
+            <li Class="CompProperties_Glower">
+                <glowRadius>4</glowRadius>
+                <glowColor>(115,200,23,0)</glowColor>
+            </li>
+            <li Class="CompProperties_Explosive">
+                <wickTicks>240</wickTicks>
+                <explosiveRadius>19.9</explosiveRadius>
+                <explosiveDamageType>Bomb</explosiveDamageType>
+                <explodeOnKilled>true</explodeOnKilled>
+                <startWickHitPointsPercent>0.5</startWickHitPointsPercent>
+                <extraInspectStringKey>ExplosionOnDamageWarning</extraInspectStringKey>
+            </li>
+
+            <li Class="CompProperties_Usable">
+                <useJob>RD_CoreHealing</useJob>
+                <useLabel>获得治疗</useLabel>
+            </li>
+            <li Class="CompProperties_UseEffect">
+                <compClass>RimDefence.CompUseEffect_VisitCore</compClass>
+            </li>
+
+        </comps>
+    </ThingDef>
+</Defs>

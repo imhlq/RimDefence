@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StorytellerDef ParentName="Base_Lansy">
+		<defName>Storyteller_RimDefence</defName>
+    <label>RimDefence</label>
+    <description>一波一波的进攻，一波一波的奖励。【最适合RimDefence的叙事者】
+    </description>
+	
+		<listOrder>29</listOrder>
+
+  </StorytellerDef>
+  
+</Defs>

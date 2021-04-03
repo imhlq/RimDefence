@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ModMetaData>
+  <name>RimDefence</name>
+  <author>xHou</author>
+  <packageId>xHou.rimdefence</packageId>
+  <url>https://xhou.me/</url>
+  <supportedVersions>
+    <li>1.2</li>
+  </supportedVersions>
+
+  <description>
+This is beta version, for RimWorld 1.0.2408.
+</description>
+
+  <modDependenciesByVersion>
+    <v1.2>
+      <li>
+        <packageId>brrainz.harmony</packageId>
+        <displayName>Harmony</displayName>
+        <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+        <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+      </li>
+    </v1.2>
+  </modDependenciesByVersion>
+  <incompatibleWith/>
+  <loadBefore/>
+  <loadAfterByVersion>
+    <v1.0/>
+    <v1.1>
+      <li>brrainz.harmony</li>
+    </v1.1>
+    <v1.2>
+      <li>brrainz.harmony</li>
+    </v1.2>
+  </loadAfterByVersion>
+</ModMetaData>

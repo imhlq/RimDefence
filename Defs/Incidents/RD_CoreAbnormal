@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IncidentDef>
+    <defName>RD_CoreAbnormal</defName>
+    <label>核心异常</label>
+    <workerClass>LansyStoryPack.IncidentWorker_ItsFurSign</workerClass>
+	
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+	
+    <baseChance>0.40</baseChance><!-- Low -->
+	
+	<!-- the description -->
+    <letterLabel>未知能量</letterLabel>
+    <letterText>天空闪过一道亮光。</letterText>
+	
+      <tale>MeteoriteImpact</tale><!-- Core -->
+  </IncidentDef>
+
+
+</Defs>

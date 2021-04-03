@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <JobDef>
+    <defName>RD_CoreHealing</defName>
+    <driverClass>JobDriver_UseItem</driverClass>
+    <reportString>正在获得治疗。</reportString>
+  </JobDef>
+</Defs>
