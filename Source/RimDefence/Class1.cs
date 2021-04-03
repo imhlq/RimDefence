@@ -20,18 +20,81 @@ namespace RimDefence
         }
     }
 
-    public class EnergyCore : CompPowerPlant
+    public class Utils
     {
-        public float dmDensity = 1.0f; // per cm3
-        public float crossSection = 1.0f; // 1e-26cm3/s
-        public float dmMass = 10.0f; // GeV
+        public static int cooldownTick = 0;
+        public static void CallNextRaider()
+        {
+            Log.Message("Click CallNextRaider");
+            Messages.Message("正在呼叫中，请做好准备", MessageTypeDefOf.ThreatBig);
+            IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, Find.CurrentMap);
+            incidentParms.forced = true;
+            incidentParms.raidStrategy = RaidStrategyDefOf.ImmediateAttack;
+            incidentParms.target = Find.CurrentMap;
+            incidentParms.points = EnergyCore.dmDensity;
+            // Arrival Mode
+            bool arrivalRnd = Rand.Chance(0.75f);
+            if (arrivalRnd)
+            {
+                incidentParms.raidArrivalMode = PawnsArrivalModeDefOf.EdgeDrop;
+            }
+            else
+            {
+                incidentParms.raidArrivalMode = PawnsArrivalModeDefOf.EdgeWalkIn;
+            }
+            // Add Incident
+            Find.Storyteller.incidentQueue.Add(IncidentDefOf.RaidEnemy, Find.TickManager.TicksGame + 2500, incidentParms, 240000);
+            Utils.cooldownTick = 60000;
+        }
 
-        protected override float DesiredPowerOutput
+        public static void CallTrader()
+        {
+            Log.Message("Click CallTrader");
+        }
+    }
+
+    public class EnergyCore : ThingComp
+    {
+        public static float dmDensity = 1.0f; // per cm3
+        public float crossSection = 1.0f; // 1e-26cm3/s
+        public float dmMass = 1.0f; // GeV
+
+        protected float DesiredPowerOutput
         {
             get
             {
                 // return Energy in game Unit
-                return 1e6F * this.dmDensity * this.dmDensity * this.crossSection / this.dmMass;
+                return dmDensity * dmDensity * this.crossSection / this.dmMass;
+            }
+        }
+
+        public override string CompInspectStringExtra()
+        {
+            string text = "";
+            text += "暗物质密度:{0}".Translate(dmDensity);
+            if(Utils.cooldownTick > 0)
+            {
+                text += '\n';
+                text += "下拨敌人冷却:{0}Ticks".Translate(Utils.cooldownTick);
+            }
+            return text;
+        }
+
+        public override void CompTick()
+        {
+            // Power
+            CompPowerPlant compPowerPlant = this.parent.TryGetComp<CompPowerPlant>();
+            if (compPowerPlant == null) return;
+            compPowerPlant.PowerOutput = this.DesiredPowerOutput;
+
+            // Incident
+            if (Utils.cooldownTick > 0)
+            {
+                Utils.cooldownTick--;
+            }
+            if(Utils.cooldownTick <= 0)
+            {
+                Utils.CallNextRaider();
             }
         }
 
@@ -45,7 +108,7 @@ namespace RimDefence
             {
                 action = delegate
                 {
-                    CallNextRaider();
+                    Utils.CallNextRaider();
                 },
                 defaultLabel = "呼叫下一波",
                 defaultDesc = "可以召回下一波敌人入侵",
@@ -56,7 +119,7 @@ namespace RimDefence
             {
                 action = delegate
                 {
-                    CallTrader();
+                    Utils.CallTrader();
                 },
                 defaultLabel = "呼叫商人",
                 defaultDesc = "可以呼叫商人交易",
@@ -65,14 +128,6 @@ namespace RimDefence
             };
         }
 
-        public void CallNextRaider()
-        {
-            Log.Message("Click CallNextRaider");
-        }
-
-        public void CallTrader()
-        {
-            Log.Message("Click CallTrader");
-        }
+        
     }
 }

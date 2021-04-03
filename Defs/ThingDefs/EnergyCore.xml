@@ -7,6 +7,7 @@
         <size>(2,2)</size>
         <passability>PassThroughOnly</passability>
         <stealable>true</stealable>
+        <tickerType>Normal</tickerType>
         <fillPercent>0.35</fillPercent>
         <pathCost>42</pathCost>
         <rotatable>false</rotatable>
@@ -54,6 +55,9 @@
                 <explodeOnKilled>true</explodeOnKilled>
                 <startWickHitPointsPercent>0.5</startWickHitPointsPercent>
                 <extraInspectStringKey>ExplosionOnDamageWarning</extraInspectStringKey>
+            </li>
+            <li>
+                <compClass>RimDefence.EnergyCore</compClass>
             </li>
 
             <li Class="CompProperties_Usable">
